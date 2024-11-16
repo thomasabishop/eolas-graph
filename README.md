@@ -4,7 +4,7 @@
 
 The frontend of the graph is created using React, managed via Vite.
 
-## Development
+### Development
 
 The following starts the development server at `http://localhost:5173/`
 
