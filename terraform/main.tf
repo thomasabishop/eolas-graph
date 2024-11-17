@@ -10,7 +10,7 @@ variable "allowed_origins" {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = "eu-west-2"
 }
 
 # Create the S3 bucket
