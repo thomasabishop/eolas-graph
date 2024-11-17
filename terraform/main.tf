@@ -18,13 +18,6 @@ resource "aws_s3_bucket" "eolas_graph" {
   bucket = "eolas-graph"
 }
 
-# Enable versioning on the bucket
-resource "aws_s3_bucket_versioning" "eolas_graph" {
-  bucket = aws_s3_bucket.eolas_graph.id
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
 
 # Bucket policy:
 #		- Single file per dir
