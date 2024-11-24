@@ -18,13 +18,17 @@ resource "aws_s3_bucket" "eolas_graph" {
   bucket = "eolas-graph"
 }
 
-
-# Bucket policy:
-#		- Single file per dir
-#		- Public read access
+resource "aws_s3_bucket_public_access_block" "allow_public_policy" {
+  bucket                  = aws_s3_bucket.eolas_graph.id
+  block_public_acls       = true
+  block_public_policy     = false
+  ignore_public_acls      = true
+  restrict_public_buckets = false
+}
 
 resource "aws_s3_bucket_policy" "public_read_single_file" {
-  bucket = aws_s3_bucket.eolas_graph.id
+  depends_on = [aws_s3_bucket_public_access_block.allow_public_policy]
+  bucket     = aws_s3_bucket.eolas_graph.id
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
