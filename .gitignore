@@ -1,5 +1,8 @@
 .terraform/
 .terraform/
 *.tfstate.*
+test-neuron/.neuron/
+test-neuron/.zk/
+
 
 
