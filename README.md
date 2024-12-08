@@ -62,7 +62,7 @@ Vite will compile the React JavaScript and CSS into two files:
 - `eolas-graph.css`
 
 These files can then be imported in the Neuron file`head.html`. The graph application will run
-within the Neuron `index.html` using `<div id="eolas-graph" /> as its entry-point.
+within the Neuron `index.html` using `<div id="eolas-graph" />` as its entry-point.
 
 ## Infrastructure
 
