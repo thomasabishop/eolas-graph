@@ -15,7 +15,7 @@ Start the development server at `http://localhost:5173/`:
 
 ```sh
 cd ui
-npm run dev # Equivalent to `vite`
+npm run dev
 ```
 
 This will run the application in a browser window as a standalone application.
@@ -25,7 +25,7 @@ This will run the application in a browser window as a standalone application.
 The graph is not deployed as a standalone application. It is embedded within a
 static [Neuron](https://neuron.zettel.page) zettelkasten website as a widget.
 
-To simulate and test the embedded form of the application, there is a
+To simulate and test the embedded version of the graph, there is a
 `start_neuron_test_instance.sh` script which can be run with:
 
 ```
@@ -44,7 +44,7 @@ firefox
 neuron
 ```
 
-kNote use pre-compiled binary on AUR (`neuron-zettelkasten-bin`) to avoid
+(Note: use the pre-compiled binary of Neuron on AUR (`neuron-zettelkasten-bin`) to avoid
 installing via Nix.)
 
 ### Build
@@ -61,15 +61,13 @@ Vite will compile the React JavaScript and CSS into two files:
 - `eolas-graph.js`
 - `eolas-graph.css`
 
-These files can then be imported in the `head` section of the index file of the Neuron instance. The
-application will run within the Neuron `index.html` using `<div id="eolas-graph" /> as its entry-point.
-
-To build the production versions of the application:
+These files can then be imported in the Neuron file`head.html`. The graph application will run
+within the Neuron `index.html` using `<div id="eolas-graph" /> as its entry-point.
 
 ## Infrastructure
 
 The JS bundle and CSS for the React frontend and the graph data JSON are stored in an
-S3 bucket.
+AWS S3 bucket.
 
 Provision of these resources is handled via Terraform and specified in
 `/terraform/main.tf`.
