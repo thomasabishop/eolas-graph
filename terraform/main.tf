@@ -55,7 +55,8 @@ resource "aws_s3_bucket_policy" "public_read_single_file" {
         ]
         Resource = [
           "${aws_s3_bucket.eolas_graph.arn}/json/*",
-          "${aws_s3_bucket.eolas_graph.arn}/js/*"
+          "${aws_s3_bucket.eolas_graph.arn}/js/*",
+          "${aws_s3_bucket.eolas_graph.arn}/css/*"
         ]
       }
     ]
@@ -88,6 +89,12 @@ resource "aws_s3_object" "json_directory" {
 resource "aws_s3_object" "js_directory" {
   bucket  = aws_s3_bucket.eolas_graph.id
   key     = "js/"
+  content = ""
+}
+
+resource "aws_s3_object" "css_directory" {
+  bucket  = aws_s3_bucket.eolas_graph.id
+  key     = "css/"
   content = ""
 }
 
