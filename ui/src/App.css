@@ -1,10 +1,19 @@
-#root {
-   max-width: 1280px;
-   margin: 0 auto;
-   padding: 2rem;
-   text-align: center;
+div.root {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   overflow: hidden;
 }
 
-html {
-   color-scheme: light !important;
+.eolas-graph {
+   width: 100vw;
+   height: 100vh;
+   position: relative;
+   .graph-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+   }
 }
